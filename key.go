@@ -93,7 +93,7 @@ func (k *Key) GetChildKey(opts ...Option) (*Key, error) {
 
 	extended := k.Extended
 	for _, i := range no.GetPath() {
-		extended, err = extended.Child(i)
+		extended, err = extended.Derive(i)
 		if err != nil {
 			return nil, err
 		}
